@@ -7,8 +7,8 @@ const App = () => {
 	const [search, setSearch] = useState('')
 	const [query, setQuery] = useState('chicken')
 
-	const APP_ID = '9266f04c'
-	const APP_KEY = '1889da8282aecb3f856beca919cf40c4'
+	const APP_ID = '' //APP ID goes here
+	const APP_KEY = '' //App key goes here
 	const URI = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
 
 	useEffect(() =>{
