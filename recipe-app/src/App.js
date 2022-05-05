@@ -27,7 +27,7 @@ const App = () => {
 				<button type="submit" className="search-btn">Search</button>
 			</form>
 			{recipes.map(recipe => (
-				<Recipe title={recipe.recipe.label} cal={recipe.recipe.calories} image={recipe.recipe.image}/>
+				<Recipe title={recipe.recipe.label} cal={"calories" + recipe.recipe.calories} image={recipe.recipe.image}/>
 			))}
 		</div>
 	)
