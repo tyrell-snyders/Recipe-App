@@ -9,4 +9,4 @@ This api uses the edamam recipe api, you can create a free account at their webs
   `npm start`
 
 ## How to build:
-  `npm build`
+  `npm run build`
