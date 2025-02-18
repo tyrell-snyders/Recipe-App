@@ -16,9 +16,14 @@ const App = () => {
 	}, [query])
 
 	const getRecipes = async () => {
-		const res = await fetch(URI)
-		const data = await res.json()
-		setRecipes(data.hits)
+		try {
+			const res = await fetch(URI);
+			const data = await res.json();
+			setRecipes(data.hits || []);
+		} catch (error) {
+			console.error("API Fetch Error:", error);
+			setRecipes([]);
+		}
 	}
 
 	const updateSearch = e => {
@@ -38,7 +43,7 @@ const App = () => {
 				<button type="submit" className="search-btn">Search</button>
 			</form>
 			<div className="recipes">
-				{recipes.map(recipe => (
+				{recipes?.map(recipe => (
 					<Recipe 
 					title={recipe.recipe.label} 
 					cal={recipe.recipe.calories} 
